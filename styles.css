@@ -1,0 +1,188 @@
+    body {
+      font-family: Arial, sans-serif;
+      background: #101018;
+      color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #181828;
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #2a2a3a;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: #4da3ff;
+      letter-spacing: 1px;
+    }
+    .feed {
+      display: flex;
+      flex-direction: column;
+      align-items: center;   /* center posts */
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .post {
+      background: #1c1c2b;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      width: 100%;
+      max-width: 500px;  /* fixed feed width */
+      margin: 20px auto; /* center the feed */
+      padding: 15px;
+      text-align: left;
+    }
+
+    /* post image */
+    .post img {
+      width: 100%;            /* always fit the width */
+      height: auto;           /* auto height keeps aspect ratio */
+      max-height: 650px;      /* optional: stop super tall pics from being too huge */
+      object-fit: contain;    /* shows full image (with bars if needed) */
+      background: #000;       /* adds black bars when aspect ratio differs */
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    .caption {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: #d0d0e0;
+    }
+
+    .caption {
+      margin: 10px 0;
+      font-size: 0.9rem;
+      color: #d0d0e0;
+    }
+    .actions {
+      display: flex;
+      justify-content: space-between;
+    }
+    .actions a {
+      padding: 6px 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: bold;
+    }
+    .approve {
+      background: #28a745;
+      color: white;
+    }
+    .delete {
+      background: #dc3545;
+      color: white;
+    }
+    /* Smooth scrolling */
+    .pending::-webkit-scrollbar {
+      height: 8px;
+    }
+    .pending::-webkit-scrollbar-thumb {
+      background: #444;
+      border-radius: 4px;
+    }
+
+    .login-box {
+      background: #1c1c2b;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      width: 300px;
+      text-align: center;
+    }
+    .login-box h2 {
+      margin-bottom: 15px;
+      color: #4da3ff;
+    }
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+    }
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      background: #4da3ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .login-box button:hover {
+      background: #367ed9;
+    }
+    .error {
+      color: #ff7676;
+      font-size: 0.9rem;
+    }
+
+    .upload-box {
+      background: #1c1c2b;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      width: 350px;
+      text-align: center;
+    }
+    .upload-box h2 {
+      margin-bottom: 20px;
+      color: #4da3ff;
+    }
+    .upload-box input, .upload-box textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      font-size: 0.95rem;
+    }
+    .upload-box input[type="file"] {
+      background: #2a2a3a;
+      color: #ccc;
+    }
+    .upload-box textarea {
+      height: 70px;
+      resize: none;
+      background: #2a2a3a;
+      color: #fff;
+    }
+    .upload-box button {
+      width: 100%;
+      padding: 12px;
+      background: #4da3ff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .upload-box button:hover {
+      background: #367ed9;
+    }
+    .message {
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: #ffdf6d;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #ccc;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .back-link:hover {
+      color: #fff;
+    }
