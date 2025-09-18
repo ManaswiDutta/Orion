@@ -42,14 +42,14 @@ $result = $conn->query("SELECT * FROM posts WHERE approved = 1 ORDER BY RAND() L
 
 <div class="feed">
   <?php while ($row = $result->fetch_assoc()): ?>
-    <div class="post">
+    <a href="post.php?q=<?php echo $row['id']; ?>"><div class="post">
       <?php if (preg_match('/\.(mp4|webm|ogg)$/i', $row['file_path'])): ?>
         <video controls src="<?= htmlspecialchars($row['file_path']) ?>"></video>
       <?php else: ?>
         <img src="<?= htmlspecialchars($row['file_path']) ?>" alt="Post">
       <?php endif; ?>
       <div class="caption"><?= htmlspecialchars($row['caption']) ?></div>
-    </div>
+    </div></a>
   <?php endwhile; ?>
 </div>
 
