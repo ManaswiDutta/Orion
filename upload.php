@@ -19,10 +19,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $targetFile = $targetDir . time() . "_" . basename($file["name"]);
 
     if (move_uploaded_file($file["tmp_name"], $targetFile)) {
-        $stmt = $conn->prepare("INSERT INTO posts (file_path, caption, approved) VALUES (?, ?, 0)");
+      session_start();
+
+      if (empty($_SESSION['admin_logged_in'])) {
+          $stmt = $conn->prepare("INSERT INTO posts (file_path, caption, approved) VALUES (?, ?, 0)");
+          $stmt->bind_param("ss", $targetFile, $caption);
+          $stmt->execute();
+          $message = "✅ Uploaded successfully! Waiting for admin approval.";
+      }
+      else{
+        $stmt = $conn->prepare("INSERT INTO posts (file_path, caption, approved) VALUES (?, ?, 1)");
         $stmt->bind_param("ss", $targetFile, $caption);
         $stmt->execute();
-        $message = "✅ Uploaded successfully! Waiting for admin approval.";
+        $message = "✅ Uploaded successfully by admin !";
+        
+      }
     } else {
         $message = "❌ Error uploading file.";
     }
