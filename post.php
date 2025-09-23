@@ -79,7 +79,8 @@ $post = $result->fetch_assoc();
 
 .post {
   position: relative;
-}
+  padding-bottom: 3em; /* Add this line */
+  }
   </style>
 </head>
 <body>
@@ -123,7 +124,7 @@ $post = $result->fetch_assoc();
 <script>
    const handleShare = async () => {
     const url = window.location.href;
-    const title = document.querySelector('h2').textContent;
+    const title = document.title;
     const text = `Check out this article: ${title}`;
 
     if (navigator.share) {

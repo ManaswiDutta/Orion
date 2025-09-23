@@ -60,6 +60,11 @@ $result = $conn->query("SELECT * FROM posts WHERE approved = 1 ORDER BY RAND() L
     }
     .post {
       position: relative;
+      padding-bottom: 3em; /* Add this line */
+    }
+
+    .feed a {
+      text-decoration:none;
     }
   </style>
 </head>
@@ -97,7 +102,7 @@ $result = $conn->query("SELECT * FROM posts WHERE approved = 1 ORDER BY RAND() L
       <button 
         class="share-button" 
         title="Share this post"
-        data-url="https://<?php echo $_SERVER['HTTP_HOST']; ?>/Orion/post.php?q=<?php echo $row['id']; ?>"
+        data-url="https://<?php echo $_SERVER['HTTP_HOST']; ?>/post.php?q=<?php echo $row['id']; ?>"
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;">
           <circle cx="18" cy="5" r="3"></circle>
@@ -127,7 +132,7 @@ document.querySelectorAll('.share-button').forEach(btn => {
           await navigator.clipboard.writeText(url);
           alert('Link copied to clipboard!');
         } catch {
-          alert('Sharing not supported. Please copy the URL manually.');
+          alert('Sharing not supported in your device. Please copy the URL manually.');
         }
       }
     } else {
